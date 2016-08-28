@@ -15,9 +15,8 @@ public class CannonAimController : MonoBehaviour {
 	void Update () {
         Vector3 curPos = Input.mousePosition;
         float delta = curPos.y - previousMousePos.y;
-        Vector3 pivot = transform.Find("CannonPivot").position;
-        //transform.Rotate(Vector3.forward * delta * movementMultiplier);
-        transform.RotateAround(pivot, Vector3.left, delta * movementMultiplier);
+        Transform pivot = transform.Find("CannonPivot"); 
+        transform.RotateAround(pivot.position, pivot.forward, delta * movementMultiplier);
         previousMousePos = curPos;
 	}
 
