@@ -27,7 +27,7 @@ public class StateController : MonoBehaviour {
 			LoadGameOver ();
 		}
 
-		if (loadGameOver && (Time.time - sceneChangeTime) > 4) {
+		if (loadGameOver && (Time.time - sceneChangeTime) > 3) {
 			LoadScene ("GameOver");
 		}
 	}
