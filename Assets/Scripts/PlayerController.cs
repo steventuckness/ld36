@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour, Damageable {
 
 	public int Health;
+	public GameObject deathExplosion;
 
 	public StateController stateController;
 
@@ -15,11 +16,17 @@ public class PlayerController : MonoBehaviour, Damageable {
 	// Update is called once per frame
 	void Update () {
 		if (Health <= 0) {
-			stateController.isPlayerDead = true;
+			Die ();
 		}
 	}
 
 	public void TakeDamage(int damage){
 		Health -= damage;
+	}
+
+	void Die() {
+		Instantiate (deathExplosion, transform.position, transform.rotation);
+		gameObject.SetActive (false);
+		stateController.isPlayerDead = true;
 	}
 }
