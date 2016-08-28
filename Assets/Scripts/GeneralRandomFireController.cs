@@ -7,6 +7,7 @@ public class GeneralRandomFireController : MonoBehaviour {
     public float cannonBallScale;
     public float power;
     public int chanceOfFire;
+	public MonoBehaviour[] onFire;
 
 	// Use this for initialization
 	void Start () {
@@ -30,5 +31,6 @@ public class GeneralRandomFireController : MonoBehaviour {
         ball.transform.localScale -= new Vector3(cannonBallScale, cannonBallScale, cannonBallScale);
         ballRB.position = tip.position;
         ballRB.velocity = tip.transform.right * -1 * power;
+		EventReceiverUtils.FireEvents (this, onFire);
     }
 }
