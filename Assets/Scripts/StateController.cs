@@ -16,8 +16,12 @@ public class StateController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (deadGenerals == totalGeneralCount || isPlayerDead) {
+		if (isPlayerDead) {
 			this.LoadScene ("GameOver");
+		}
+
+		if (deadGenerals == totalGeneralCount) {
+			// TODO: something else later
 		}
 	}
 
