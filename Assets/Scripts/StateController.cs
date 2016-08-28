@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class StateController : MonoBehaviour {
 
-    public int deadGenerals;
-    public int totalGeneralCount;
+    public int deadGenerals; 
+    public int totalGeneralCount; 
     public bool isPlayerDead;
 
 	// Use this for initialization
@@ -16,7 +16,9 @@ public class StateController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        	
+		if (deadGenerals == totalGeneralCount || isPlayerDead) {
+			this.LoadScene ("GameOver");
+		}
 	}
 
 	public void LoadScene(string levelName)
