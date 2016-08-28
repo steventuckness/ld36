@@ -20,6 +20,6 @@ public class PlayerController : MonoBehaviour, Damageable {
 	}
 
 	public void TakeDamage(int damage){
-		//Health -= damage;
+		Health -= damage;
 	}
 }

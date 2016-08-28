@@ -10,7 +10,7 @@ public class GeneralRandomFireController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -30,5 +30,8 @@ public class GeneralRandomFireController : MonoBehaviour {
         ball.transform.localScale -= new Vector3(cannonBallScale, cannonBallScale, cannonBallScale);
         ballRB.position = tip.position;
         ballRB.velocity = tip.transform.right * -1 * power;
+		CannonballController cbc = ball.GetComponent<CannonballController> ();
+		cbc.cannonBallSource = "General";
+	
     }
 }
