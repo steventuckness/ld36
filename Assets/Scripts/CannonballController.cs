@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CanonballController : MonoBehaviour {
+public class CannonballController : MonoBehaviour {
 
     public int damage = 10;
 
+	public string cannonBallSource;
+
 	void Start(){
+		
 	}
 
 	void OnCollisionEnter(Collision col)
@@ -13,8 +16,11 @@ public class CanonballController : MonoBehaviour {
         Damageable[] damageables = col.gameObject.GetComponents<Damageable>();
         foreach (Damageable d in damageables)
         {
-            d.TakeDamage(damage);
+			if (col.gameObject.tag == "Player" && this.cannonBallSource == "Player") {
+				
+			} else {
+				d.TakeDamage(damage);
+			}
         }
-
     }
 }
