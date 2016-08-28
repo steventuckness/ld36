@@ -1,24 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CannonFireController : MonoBehaviour {
+public class GeneralRandomFireController : MonoBehaviour {
 
     public GameObject cannonBall;
     public float cannonBallScale;
     public float power;
-    public int cooldown;
+    public int chanceOfFire;
 
 	// Use this for initialization
 	void Start () {
-        	
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0))
+
+        if (Mathf.RoundToInt(Random.value * chanceOfFire) == 1)
         {
             Fire();
-        }	
+        }        	
 	}
 
     void Fire()

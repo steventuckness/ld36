@@ -21,7 +21,7 @@ public class StateController : MonoBehaviour {
 		}
 
 		if (deadGenerals == totalGeneralCount) {
-			// TODO: something else later
+            this.LoadScene("GameOver");	
 		}
 	}
 
