@@ -4,6 +4,7 @@ using System.Collections;
 public class CannonFireController : MonoBehaviour {
 
     public GameObject cannonBall;
+	public MonoBehaviour[] onFire;
     public float cannonBallScale;
     public float power;
     public int cooldown;
@@ -29,5 +30,6 @@ public class CannonFireController : MonoBehaviour {
         ball.transform.localScale -= new Vector3(cannonBallScale, cannonBallScale, cannonBallScale);
         ballRB.position = tip.position;
         ballRB.velocity = tip.transform.right * -1 * power;
+		EventReceiverUtils.FireEvents (this, onFire);
     }
 }
