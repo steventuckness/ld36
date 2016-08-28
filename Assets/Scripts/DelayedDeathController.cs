@@ -4,6 +4,7 @@ using System.Collections;
 public class DelayedDeathController : MonoBehaviour {
 
 	public int ActiveSetToFalseDelay;
+    public StateController state;
 
 	// Use this for initialization
 	void Start () {
@@ -22,5 +23,6 @@ public class DelayedDeathController : MonoBehaviour {
 	IEnumerator DieSlowly() {
 		yield return new WaitForSeconds(ActiveSetToFalseDelay);
 		this.gameObject.SetActive(false);
+        state.deadGenerals++;
 	}
 }

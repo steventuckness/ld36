@@ -5,10 +5,7 @@ public class CanonballController : MonoBehaviour {
 
     public int damage = 10;
 
-	DelayedDeathController delayedDeathController;
-
 	void Start(){
-		this.delayedDeathController = this.gameObject.GetComponent<DelayedDeathController> ();
 	}
 
 	void OnCollisionEnter(Collision col)
@@ -19,6 +16,5 @@ public class CanonballController : MonoBehaviour {
             d.TakeDamage(damage);
         }
 
-		delayedDeathController.BeginDieSlowly ();
     }
 }

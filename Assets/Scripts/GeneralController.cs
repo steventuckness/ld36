@@ -11,7 +11,7 @@ public class GeneralController : MonoBehaviour, Damageable {
 
 	void OnCollisionEnter(Collision col)
 	{
-		if (col.gameObject.name == "Terrain" || Health > 0) {
+		if (col.gameObject.name == "Terrain") {
 			this.delayedDeathController.BeginDieSlowly ();
 		} 
 	}
