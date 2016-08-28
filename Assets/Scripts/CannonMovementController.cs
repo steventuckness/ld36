@@ -67,13 +67,13 @@ public class CannonMovementController : MonoBehaviour {
         }
         if (curForwardDirection == FORWARD_DIRECTION.FORWARD)
         {
-            direction = -1;
+            direction = 1;
         }
         else if (curForwardDirection == FORWARD_DIRECTION.BACKWARD)
         {
-            direction = 1;
+            direction = -1;
         }
-        rb.AddForce(transform.right * direction * acceleration);
+        rb.AddForce(transform.forward * direction * acceleration);
     }
 
     void DetectHorizontalDirection()
