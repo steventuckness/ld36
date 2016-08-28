@@ -5,8 +5,6 @@ public class GeneralController : MonoBehaviour, Damageable {
 
 	public int Health;
 
-	//StateController stateController;
-
 	public DelayedDeathController delayedDeathController;
 
 	void OnCollisionEnter(Collision col)
@@ -22,8 +20,6 @@ public class GeneralController : MonoBehaviour, Damageable {
 				
 	// Use this for initialization
 	void Start () {
-		//stateController = GameObject.Find ("State").GetComponent<StateController>();
-
 		this.delayedDeathController = gameObject.GetComponent<DelayedDeathController> ();
 	}
 	
