@@ -7,6 +7,7 @@ public class GeneralRandomFireController : MonoBehaviour {
     public float cannonBallScale;
     public float power;
     public int chanceOfFire;
+	public MonoBehaviour[] onFire;
 
 	// Use this for initialization
 	void Start () {
@@ -33,5 +34,6 @@ public class GeneralRandomFireController : MonoBehaviour {
 		CannonballController cbc = ball.GetComponent<CannonballController> ();
 		cbc.cannonBallSource = "General";
 	
+		EventReceiverUtils.FireEvents (this, onFire);
     }
 }
