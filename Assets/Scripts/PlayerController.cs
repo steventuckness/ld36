@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour, Damageable {
 	// Update is called once per frame
 	void Update () {
 		if (Health <= 0) {
-			stateController.LoadScene ("GameOver");
+			stateController.LoadScene ("MainGame");
 		}
 	}
 
