@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour, Damageable {
 
 	public int Health;
 	public GameObject deathExplosion;
+	public Slider healthSlider;
 
 	public StateController stateController;
 
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour, Damageable {
 
 	public void TakeDamage(int damage){
 		Health -= damage;
+		healthSlider.value = Health;
 	}
 
 	void Die() {
