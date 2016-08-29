@@ -4,6 +4,7 @@ using System.Collections;
 public class CannonballController : MonoBehaviour {
 
     public int damage = 10;
+	public float magnitudeThreshold;
 
 	public string cannonBallSource;
 
@@ -18,7 +19,7 @@ public class CannonballController : MonoBehaviour {
         {
 			if (col.gameObject.tag == "Player" && this.cannonBallSource == "Player") {
 				
-			} else {
+			} else if (col.impulse.magnitude > magnitudeThreshold) {
 				d.TakeDamage(damage);
 			}
         }
