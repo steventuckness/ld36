@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CannonballController : MonoBehaviour {
 
-    public int damage = 10;
+    public int damage;
 	public float magnitudeThreshold;
 
 	public string cannonBallSource;
