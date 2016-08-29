@@ -33,7 +33,8 @@ public class GeneralRandomFireController : MonoBehaviour {
         ballRB.velocity = tip.transform.right * -1 * power;
 		CannonballController cbc = ball.GetComponent<CannonballController> ();
 		cbc.cannonBallSource = "General";
-	
+		ParticleSystem ps = tip.GetComponent<ParticleSystem> ();
+		ps.Play();
 		EventReceiverUtils.FireEvents (this, onFire);
     }
 }
